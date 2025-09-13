@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <h1>商品一覧</h1>
+    <h1>{{ $t('products') }}</h1>
     <div class="products-grid">
       <div v-for="product in products" :key="product.id" class="product-card">
         <h2>{{ product.name }}</h2>
         <p class="category">{{ product.category }}</p>
         <p class="price">¥{{ product.price.toLocaleString() }}</p>
         <p>{{ product.description }}</p>
-        <NuxtLink :to="`/products/${product.id}`" class="link">
-          詳細を見る
+        <NuxtLink :to="localePath(`/products/${product.id}`)" class="link">
+          {{ $t('product.detail') }}
         </NuxtLink>
       </div>
     </div>
@@ -17,6 +17,12 @@
 
 <script setup lang="ts">
 const { products } = useProducts()
+const localePath = useLocalePath()
+
+useSeoMeta({
+  title: '商品一覧',
+  description: 'ローカルJSONから生成された商品一覧ページ'
+})
 </script>
 
 <style scoped>
@@ -26,11 +32,15 @@ const { products } = useProducts()
   padding: 2rem;
 }
 
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 .product-card {

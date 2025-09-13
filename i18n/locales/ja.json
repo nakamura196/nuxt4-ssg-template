@@ -1,0 +1,35 @@
+{
+  "welcome": "ようこそ",
+  "products": "商品一覧",
+  "categories": "カテゴリー",
+  "catalog": "商品カタログ",
+  "language": "言語",
+  "filter": {
+    "all": "すべて",
+    "category": "カテゴリー",
+    "brand": "ブランド"
+  },
+  "product": {
+    "price": "価格",
+    "stock": "在庫",
+    "release": "発売日",
+    "description": "商品説明",
+    "specs": "仕様",
+    "images": "商品画像",
+    "detail": "詳細を見る",
+    "back": "商品一覧に戻る",
+    "notFound": "商品が見つかりません"
+  },
+  "items": {
+    "title": "商品カタログ（個別JSONファイル版）",
+    "stock": "在庫: {count}個",
+    "release": "発売: {date}"
+  },
+  "navigation": {
+    "home": "ホーム",
+    "about": "このサイトについて",
+    "contact": "お問い合わせ",
+    "menu": "メニュー"
+  },
+  "Vuetify Demo": "Vuetifyデモ"
+}

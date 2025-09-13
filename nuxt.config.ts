@@ -9,8 +9,26 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/test-utils',
     '@nuxt/ui',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/i18n'
   ],
+  
+  i18n: {
+    locales: [
+      { code: 'ja', name: '日本語', file: 'ja.json', iso: 'ja-JP' },
+      { code: 'en', name: 'English', file: 'en.json', iso: 'en-US' }
+    ],
+    defaultLocale: 'ja',
+    lazy: true,
+    langDir: 'locales/',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    },
+    vueI18n: './i18n.config.ts'
+  },
 
   nitro: {
     prerender: {
@@ -24,7 +42,6 @@ export default defineNuxtConfig({
   
   hooks: {
     'nitro:config': (nitroConfig) => {
-      // 個別JSONファイルからルートを動的に生成
       const itemFiles = ['laptop-001', 'laptop-002', 'mouse-001', 'keyboard-001', 'monitor-001']
       const itemRoutes = itemFiles.map(id => `/items/${id}`)
       

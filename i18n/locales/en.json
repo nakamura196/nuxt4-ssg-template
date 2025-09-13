@@ -1,0 +1,35 @@
+{
+  "welcome": "Welcome",
+  "products": "Products",
+  "categories": "Categories",
+  "catalog": "Product Catalog",
+  "language": "Language",
+  "filter": {
+    "all": "All",
+    "category": "Category",
+    "brand": "Brand"
+  },
+  "product": {
+    "price": "Price",
+    "stock": "Stock",
+    "release": "Release Date",
+    "description": "Description",
+    "specs": "Specifications",
+    "images": "Product Images",
+    "detail": "View Details",
+    "back": "Back to Products",
+    "notFound": "Product not found"
+  },
+  "items": {
+    "title": "Product Catalog (Individual JSON Files)",
+    "stock": "Stock: {count} units",
+    "release": "Released: {date}"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "Vuetify Demo": "Vuetify Demo"
+}
