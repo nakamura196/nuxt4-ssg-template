@@ -1,0 +1,20 @@
+{
+  "id": "mouse-001",
+  "name": "MX Master 3S",
+  "price": 15000,
+  "category": "マウス",
+  "brand": "Logicool",
+  "specs": {
+    "connection": "Bluetooth/USB レシーバー",
+    "battery": "充電式（最大70日間）",
+    "dpi": "200-8000 DPI",
+    "buttons": "7ボタン"
+  },
+  "description": "高精度センサー搭載のプロフェッショナルマウス",
+  "stock": 25,
+  "images": [
+    "/images/mouse-001-1.jpg"
+  ],
+  "releaseDate": "2023-06-10",
+  "tags": ["高精度", "エルゴノミクス", "静音"]
+}

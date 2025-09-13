@@ -1,0 +1,21 @@
+{
+  "id": "laptop-001",
+  "name": "MacBook Pro 16インチ",
+  "price": 380000,
+  "category": "ノートパソコン",
+  "brand": "Apple",
+  "specs": {
+    "cpu": "M3 Max",
+    "memory": "36GB",
+    "storage": "1TB SSD",
+    "display": "16.2インチ Liquid Retina XDR"
+  },
+  "description": "プロフェッショナル向けの高性能ノートパソコン",
+  "stock": 5,
+  "images": [
+    "/images/laptop-001-1.jpg",
+    "/images/laptop-001-2.jpg"
+  ],
+  "releaseDate": "2024-01-15",
+  "tags": ["高性能", "プロ向け", "Apple"]
+}

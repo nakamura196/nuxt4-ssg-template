@@ -1,0 +1,21 @@
+{
+  "id": "keyboard-001",
+  "name": "HHKB Professional HYBRID Type-S",
+  "price": 36000,
+  "category": "キーボード",
+  "brand": "PFU",
+  "specs": {
+    "switch": "静電容量無接点方式",
+    "layout": "60% コンパクト",
+    "connection": "USB-C/Bluetooth",
+    "keys": "60キー"
+  },
+  "description": "プログラマー向け高級キーボード",
+  "stock": 8,
+  "images": [
+    "/images/keyboard-001-1.jpg",
+    "/images/keyboard-001-2.jpg"
+  ],
+  "releaseDate": "2023-08-01",
+  "tags": ["高級", "静音", "コンパクト", "プログラマー向け"]
+}

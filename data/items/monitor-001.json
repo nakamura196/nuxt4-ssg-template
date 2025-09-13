@@ -1,0 +1,21 @@
+{
+  "id": "monitor-001",
+  "name": "Dell U3223QE",
+  "price": 120000,
+  "category": "モニター",
+  "brand": "Dell",
+  "specs": {
+    "size": "32インチ",
+    "resolution": "3840 x 2160 (4K)",
+    "panel": "IPS Black",
+    "refreshRate": "60Hz",
+    "ports": "USB-C, HDMI, DisplayPort"
+  },
+  "description": "USB-Cハブ機能付き4Kモニター",
+  "stock": 6,
+  "images": [
+    "/images/monitor-001-1.jpg"
+  ],
+  "releaseDate": "2023-09-15",
+  "tags": ["4K", "USB-C", "IPS", "大画面"]
+}
