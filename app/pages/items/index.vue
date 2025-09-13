@@ -51,6 +51,13 @@
 </template>
 
 <script setup lang="ts">
+// 静的インポートでJSONファイルを読み込む
+import laptopData001 from '~/data/items/laptop-001.json'
+import laptopData002 from '~/data/items/laptop-002.json'
+import mouseData001 from '~/data/items/mouse-001.json'
+import keyboardData001 from '~/data/items/keyboard-001.json'
+import monitorData001 from '~/data/items/monitor-001.json'
+
 interface ItemSpecs {
   [key: string]: string | number
 }
@@ -69,35 +76,33 @@ interface Item {
   tags: string[]
 }
 
-// サーバーAPIからデータを取得
-const { data: items } = await useFetch<Item[]>('/api/items')
+// すべてのアイテムデータを配列にまとめる
+const items = ref<Item[]>([
+  laptopData001,
+  laptopData002,
+  mouseData001,
+  keyboardData001,
+  monitorData001
+])
 
 const categories = computed(() => 
-  items.value ? [...new Set(items.value.map(item => item.category))] : []
+  [...new Set(items.value.map(item => item.category))]
 )
 const brands = computed(() => 
-  items.value ? [...new Set(items.value.map(item => item.brand))] : []
+  [...new Set(items.value.map(item => item.brand))]
 )
 
 const selectedCategory = ref('')
 const selectedBrand = ref('')
-const filteredItems = ref(items.value || [])
+const filteredItems = ref(items.value)
 
 const filterItems = () => {
-  if (!items.value) return
-  
   filteredItems.value = items.value.filter(item => {
     const categoryMatch = !selectedCategory.value || item.category === selectedCategory.value
     const brandMatch = !selectedBrand.value || item.brand === selectedBrand.value
     return categoryMatch && brandMatch
   })
 }
-
-// itemsが更新されたら filteredItems も更新
-watch(items, (newItems) => {
-  filteredItems.value = newItems || []
-  filterItems()
-})
 
 useSeoMeta({
   title: '商品カタログ - 個別JSONファイル版',

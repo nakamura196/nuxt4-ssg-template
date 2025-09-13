@@ -64,6 +64,13 @@
 </template>
 
 <script setup lang="ts">
+// 静的インポートでJSONファイルを読み込む
+import laptopData001 from '~/data/items/laptop-001.json'
+import laptopData002 from '~/data/items/laptop-002.json'
+import mouseData001 from '~/data/items/mouse-001.json'
+import keyboardData001 from '~/data/items/keyboard-001.json'
+import monitorData001 from '~/data/items/monitor-001.json'
+
 interface ItemSpecs {
   [key: string]: string | number
 }
@@ -85,10 +92,18 @@ interface Item {
 const route = useRoute()
 const itemId = route.params.id as string
 
-// サーバーAPIから個別アイテムを取得
-const { data: item } = await useFetch<Item>(`/api/items/${itemId}`)
+// IDに基づいて適切なデータを選択
+const itemsMap: Record<string, Item> = {
+  'laptop-001': laptopData001,
+  'laptop-002': laptopData002,
+  'mouse-001': mouseData001,
+  'keyboard-001': keyboardData001,
+  'monitor-001': monitorData001
+}
 
-if (!item.value) {
+const item = itemsMap[itemId] || null
+
+if (!item) {
   throw createError({
     statusCode: 404,
     statusMessage: `Item ${itemId} not found`
@@ -127,8 +142,8 @@ const formatDate = (dateStr: string): string => {
 }
 
 useSeoMeta({
-  title: item.value ? `${item.value.name} - ${item.value.brand}` : '商品詳細',
-  description: item.value?.description || ''
+  title: item ? `${item.name} - ${item.brand}` : '商品詳細',
+  description: item?.description || ''
 })
 </script>
 

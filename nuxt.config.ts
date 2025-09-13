@@ -50,7 +50,6 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: process.env.NITRO_APP_BASE_URL || '/',
-    buildAssetsDir: '/_nuxt/'
+    baseURL: process.env.NITRO_APP_BASE_URL || '/'
   }
 })

@@ -35,6 +35,7 @@ jobs:
         run: npm run generate
         env:
           NITRO_APP_BASE_URL: /nuxt4-ssg-template/
+          NITRO_PRESET: github_pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
