@@ -47,5 +47,10 @@ export default defineNuxtConfig({
     '/categories/**': { prerender: true },
     '/items': { prerender: true },
     '/items/**': { prerender: true }
+  },
+
+  app: {
+    baseURL: process.env.NITRO_APP_BASE_URL || '/',
+    buildAssetsDir: '/_nuxt/'
   }
 })
